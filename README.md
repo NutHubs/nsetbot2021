@@ -1,2 +1,2 @@
-# nsetbot2021
-NSETBot for Test Drive
+# nsetbot
+one bot for all data
