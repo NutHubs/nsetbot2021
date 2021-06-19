@@ -16,9 +16,6 @@ $_msg = $arrJson['events'][0]['message']['text'];
 	$arrPostData['messages'][0]['type'] = "template";
 	$arrPostData['messages'][0]['altText'] = "Special Command";
    	$arrPostData['messages'][0]['template'] = [
-   		"type" => "template", 
-   		"altText" => "This is a buttons template", 
-   		"template" => [
         	"type" => "buttons", 
          	"thumbnailImageUrl" => "https://example.com/bot/images/image.jpg", 
          	"imageAspectRatio" => "rectangle", 
@@ -30,8 +27,9 @@ $_msg = $arrJson['events'][0]['message']['text'];
             	"type" => "uri", 
             	"label" => "View detail", 
             	"uri" => "http://example.com/page/123" 
-         ], 
-         "actions" => [
+        ];
+	
+	$arrPostData['messages'][0]['actions'] = [
                [
                   "type" => "postback", 
                   "label" => "Buy", 
@@ -47,9 +45,8 @@ $_msg = $arrJson['events'][0]['message']['text'];
                      "label" => "View detail", 
                      "uri" => "http://example.com/page/123" 
                ] 
-            ] 
-      ] 
-]; 
+        ]; 
+
 	  
     	$arrPostData['messages'][1]['type'] = "sticker";
     	$arrPostData['messages'][1]['packageId'] = "2";
