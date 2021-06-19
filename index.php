@@ -27,30 +27,30 @@ $_msg = $arrJson['events'][0]['message']['text'];
             	"type" => "uri", 
             	"label" => "View detail", 
             	"uri" => "http://example.com/page/123" 
-        ];
-	
-	$arrPostData['messages'][0]['actions'] = [
-               [
-                  "type" => "postback", 
-                  "label" => "Buy", 
-                  "data" => "action=buy&itemid=123" 
-               ], 
-               [
-                     "type" => "postback", 
-                     "label" => "Add to cart", 
-                     "data" => "action=add&itemid=123" 
-               ], 
-               [
-                     "type" => "uri", 
-                     "label" => "View detail", 
-                     "uri" => "http://example.com/page/123" 
-               ] 
+        	],
+		"actions" => [
+               		[
+                  		"type" => "postback", 
+                  		"label" => "Buy", 
+                  		"data" => "action=buy&itemid=123" 
+               		], 
+               		[
+                     		"type" => "postback", 
+                     		"label" => "Add to cart", 
+                     		"data" => "action=add&itemid=123" 
+               		], 
+               		[
+                     		"type" => "uri", 
+                     		"label" => "View detail", 
+                     		"uri" => "http://example.com/page/123" 
+               		] 
+		]
         ]; 
 
 	  
     	$arrPostData['messages'][1]['type'] = "sticker";
     	$arrPostData['messages'][1]['packageId'] = "2";
-	    $arrPostData['messages'][1]['stickerId'] = "172";
+	$arrPostData['messages'][1]['stickerId'] = "172";
 
 
 $channel = curl_init();
