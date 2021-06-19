@@ -11,6 +11,16 @@ $arrHeader[] = "Authorization: Bearer {$strAccessToken}";
 $_msg = $arrJson['events'][0]['message']['text'];
 
 
+    	$arrPostData = array();
+    	$arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
+	    $arrPostData['messages'][0]['type'] = "text";
+   	  $arrPostData['messages'][0]['text'] = 'อร่อยที่สุดในโลกเลยหล่ะ';
+	  
+    	$arrPostData['messages'][1]['type'] = "sticker";
+    	$arrPostData['messages'][1]['packageId'] = "2";
+	    $arrPostData['messages'][1]['stickerId'] = "172";
+
+
 $channel = curl_init();
 curl_setopt($channel, CURLOPT_URL,$strUrl);
 curl_setopt($channel, CURLOPT_HEADER, false);
