@@ -36,7 +36,7 @@ if(strtoupper($_msg) == "SCM")
                      		"uri" => "http://example.com/page/123" 
                		],
                		[
-                  		"type" => "message", 
+                  		"type" => "action", 
                   		"label" => "ASSEMBLY", 
                   		"data" => "action=buy&itemid=123" 
                		] 
