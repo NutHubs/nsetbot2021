@@ -38,7 +38,7 @@ if(strtoupper($_msg) == "SCM")
                		[
                   		"type" => "message", 
                   		"label" => "ASSEMBLY", 
-                  		"data" => "TT" 
+                  		"data" => "action=buy&itemid=123" 
                		] 
 		]
         ]; 
