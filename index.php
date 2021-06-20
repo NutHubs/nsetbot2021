@@ -30,15 +30,15 @@ if(strtoupper($_msg) == "SCM")
             	"uri" => "http://example.com/page/123" 
         	],
 		"actions" => [
-               		[
-                  		"type" => "postback", 
-                  		"label" => "ASSEMBLY", 
-                  		"data" => "action=ASSEMBLY&itemid=111" 
-               		], 
-               		[
+			[
                      		"type" => "uri", 
                      		"label" => "ALL", 
                      		"uri" => "http://example.com/page/123" 
+               		],
+               		[
+                  		"type" => "text", 
+                  		"label" => "ASSEMBLY", 
+                  		"data" => "TT" 
                		] 
 		]
         ]; 
