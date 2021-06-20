@@ -21,7 +21,7 @@ if(strtoupper($_msg) == "SCM")
          	"thumbnailImageUrl" => "https://example.com/bot/images/item1.jpg", 
          	"imageAspectRatio" => "rectangle", 
          	"imageSize" => "cover", 
-         	"imageBackgroundColor" => "#FFFFFF", 
+         	"imageBackgroundColor" => "#000000", 
          	"title" => "Special Command", 
          	"text" => "Please select command", 
          	"defaultAction" => [
@@ -44,12 +44,12 @@ if(strtoupper($_msg) == "SCM")
         ]; 
 }
 
-else if(strtoupper($_msg) == "TT")
-{
-	$arrPostData['messages'][1]['type'] = "sticker";
-    	$arrPostData['messages'][1]['packageId'] = "2";
-	$arrPostData['messages'][1]['stickerId'] = "172";
-}
+//else if(strtoupper($_msg) == "TT")
+//{
+	//$arrPostData['messages'][1]['type'] = "sticker";
+    	//$arrPostData['messages'][1]['packageId'] = "2";
+	//$arrPostData['messages'][1]['stickerId'] = "172";
+//}
 
 	  
     	//$arrPostData['messages'][1]['type'] = "sticker";
