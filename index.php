@@ -21,7 +21,7 @@ if(strtoupper($_msg) == "SCM")
          	"thumbnailImageUrl" => "https://example.com/bot/images/item1.jpg", 
          	"imageAspectRatio" => "rectangle", 
          	"imageSize" => "cover", 
-         	"imageBackgroundColor" => "#FFFFFF", 
+         	"imageBackgroundColor" => "#000", 
          	"title" => "Special Command", 
          	"text" => "Please select command", 
          	"defaultAction" => [
@@ -36,7 +36,7 @@ if(strtoupper($_msg) == "SCM")
                      		"uri" => "http://example.com/page/123" 
                		],
                		[
-                  		"type" => "text", 
+                  		"type" => "message", 
                   		"label" => "ASSEMBLY", 
                   		"data" => "TT" 
                		] 
