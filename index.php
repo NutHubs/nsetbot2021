@@ -10,14 +10,15 @@ $arrHeader[] = "Content-Type: application/json";
 $arrHeader[] = "Authorization: Bearer {$strAccessToken}";
 $_msg = $arrJson['events'][0]['message']['text'];
 
-
+if(strtoupper($_msg) == "TT")
+{
     	$arrPostData = array();
     	$arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
 	$arrPostData['messages'][0]['type'] = "template";
 	$arrPostData['messages'][0]['altText'] = "Special Command";
    	$arrPostData['messages'][0]['template'] = [
         	"type" => "buttons", 
-         	"thumbnailImageUrl" => "https://example.com/bot/images/image.jpg", 
+         	"thumbnailImageUrl" => "https://example.com/bot/images/item1.jpg", 
          	"imageAspectRatio" => "rectangle", 
          	"imageSize" => "cover", 
          	"imageBackgroundColor" => "#FFFFFF", 
@@ -32,7 +33,7 @@ $_msg = $arrJson['events'][0]['message']['text'];
                		[
                   		"type" => "postback", 
                   		"label" => "ASSEMBLY", 
-                  		"data" => "action=buy&itemid=123" 
+                  		"data" => "SPC ASSEMBY RUNNING" 
                		], 
                		[
                      		"type" => "uri", 
@@ -41,6 +42,22 @@ $_msg = $arrJson['events'][0]['message']['text'];
                		] 
 		]
         ]; 
+}
+
+if(ereg("^(SPC[[:space:]])([[:space:]][A-Z])([[:space:]][A-Z])$", strtoupper($_msg)) == true)
+{
+	include("lib/nusoap.php");
+	$client = new nusoap_client("http://223.27.205.134:12000/Administration/nset_getdata.asmx?wsdl",true); 
+	$arrMsg = explode(" ", $_msg);
+	$params = array('processGrp' => (string)$arrMsg[1], 'status' => (string)$arrMsg[2]);
+	$data = $client->call('setSpecialCommand', $params);
+	$mydata = json_decode($data["setSpecialCommandResult"],true); 
+    
+    	$arrPostData = array();
+    	$arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
+    	$arrPostData['messages'][0]['type'] = "text";
+    	$arrPostData['messages'][0]['text'] = $mydata[0]['resultMsg'];
+}
 
 	  
     	//$arrPostData['messages'][1]['type'] = "sticker";
