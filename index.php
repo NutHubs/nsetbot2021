@@ -10,7 +10,7 @@ $arrHeader[] = "Content-Type: application/json";
 $arrHeader[] = "Authorization: Bearer {$strAccessToken}";
 $_msg = $arrJson['events'][0]['message']['text'];
 
-if(strtoupper($_msg) == "TT")
+if(strtoupper($_msg) == "SCM")
 {
     	$arrPostData = array();
     	$arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
@@ -44,7 +44,7 @@ if(strtoupper($_msg) == "TT")
         ]; 
 }
 
-if(ereg("^(SPC[[:space:]])([[:space:]][A-Z])([[:space:]][A-Z])$", strtoupper($_msg)) == true)
+if(ereg("^(SPC[[:space:]][A-Z][[:space:]][A-Z])$") strtoupper($_msg)) == true)
 {
 	include("lib/nusoap.php");
 	$client = new nusoap_client("http://223.27.205.134:12000/Administration/nset_getdata.asmx?wsdl",true); 
