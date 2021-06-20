@@ -36,7 +36,7 @@ if(strtoupper($_msg) == "SCM")
                      		"uri" => "http://example.com/page/123" 
                		],
                		[
-                  		"type" => "action", 
+                  		"type" => "postback", 
                   		"label" => "ASSEMBLY", 
                   		"data" => "action=buy&itemid=123" 
                		] 
@@ -44,12 +44,12 @@ if(strtoupper($_msg) == "SCM")
         ]; 
 }
 
-//else if(strtoupper($_msg) == "TT")
-//{
-	//$arrPostData['messages'][1]['type'] = "sticker";
-    	//$arrPostData['messages'][1]['packageId'] = "2";
-	//$arrPostData['messages'][1]['stickerId'] = "172";
-//}
+else if(strtoupper($_msg) == "TT")
+{
+	$arrPostData['messages'][1]['type'] = "sticker";
+    	$arrPostData['messages'][1]['packageId'] = "2";
+	$arrPostData['messages'][1]['stickerId'] = "172";
+}
 
 	  
     	//$arrPostData['messages'][1]['type'] = "sticker";
