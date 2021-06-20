@@ -21,7 +21,7 @@ if(strtoupper($_msg) == "SCM")
          	"thumbnailImageUrl" => "https://example.com/bot/images/item1.jpg", 
          	"imageAspectRatio" => "rectangle", 
          	"imageSize" => "cover", 
-         	"imageBackgroundColor" => "#000", 
+         	"imageBackgroundColor" => "#000000", 
          	"title" => "Special Command", 
          	"text" => "Please select command", 
          	"defaultAction" => [
