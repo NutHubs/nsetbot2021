@@ -22,7 +22,7 @@ $_msg = $arrJson['events'][0]['message']['text'];
          	"imageSize" => "cover", 
          	"imageBackgroundColor" => "#FFFFFF", 
          	"title" => "Menu", 
-         	"text" => "Please select", 
+         	"text" => "Please select command", 
          	"defaultAction" => [
             	"type" => "uri", 
             	"label" => "View detail", 
@@ -31,26 +31,21 @@ $_msg = $arrJson['events'][0]['message']['text'];
 		"actions" => [
                		[
                   		"type" => "postback", 
-                  		"label" => "Buy", 
+                  		"label" => "ASSEMBLY", 
                   		"data" => "action=buy&itemid=123" 
                		], 
                		[
-                     		"type" => "postback", 
-                     		"label" => "Add to cart", 
-                     		"data" => "action=add&itemid=123" 
-               		], 
-               		[
                      		"type" => "uri", 
-                     		"label" => "View detail", 
+                     		"label" => "ALL", 
                      		"uri" => "http://example.com/page/123" 
                		] 
 		]
         ]; 
 
 	  
-    	$arrPostData['messages'][1]['type'] = "sticker";
-    	$arrPostData['messages'][1]['packageId'] = "2";
-	$arrPostData['messages'][1]['stickerId'] = "172";
+    	//$arrPostData['messages'][1]['type'] = "sticker";
+    	//$arrPostData['messages'][1]['packageId'] = "2";
+	//$arrPostData['messages'][1]['stickerId'] = "172";
 
 
 $channel = curl_init();
