@@ -44,12 +44,12 @@ if(strtoupper($_msg) == "SCM")
         ]; 
 }
 
-if(strtoupper($_msg) == "TT")
-{
-	$arrPostData['messages'][1]['type'] = "sticker";
-    	$arrPostData['messages'][1]['packageId'] = "2";
-	$arrPostData['messages'][1]['stickerId'] = "172";
-}
+//if(strtoupper($_msg) == "TT")
+//{
+	//$arrPostData['messages'][1]['type'] = "sticker";
+    	//$arrPostData['messages'][1]['packageId'] = "2";
+	//$arrPostData['messages'][1]['stickerId'] = "172";
+//}
 
 	  
     	//$arrPostData['messages'][1]['type'] = "sticker";
