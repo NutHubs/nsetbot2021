@@ -22,7 +22,7 @@ if(strtoupper($_msg) == "SCM")
          	"imageAspectRatio" => "rectangle", 
          	"imageSize" => "cover", 
          	"imageBackgroundColor" => "#FFFFFF", 
-         	"title" => "Menu", 
+         	"title" => "Special Command", 
          	"text" => "Please select command", 
          	"defaultAction" => [
             	"type" => "uri", 
@@ -33,7 +33,7 @@ if(strtoupper($_msg) == "SCM")
                		[
                   		"type" => "postback", 
                   		"label" => "ASSEMBLY", 
-                  		"data" => "TT" 
+                  		"data" => "action=ASSEMBLY&itemid=TT" 
                		], 
                		[
                      		"type" => "uri", 
