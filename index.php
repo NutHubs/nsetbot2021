@@ -33,7 +33,7 @@ if(strtoupper($_msg) == "SCM")
                		[
                   		"type" => "postback", 
                   		"label" => "ASSEMBLY", 
-                  		"data" => "action=ASSEMBLY&messages=TT" 
+                  		"data" => "action=ASSEMBLY&itemid=111" 
                		], 
                		[
                      		"type" => "uri", 
