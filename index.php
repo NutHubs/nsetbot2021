@@ -33,7 +33,7 @@ if(strtoupper($_msg) == "SCM")
                		[
                   		"type" => "postback", 
                   		"label" => "ASSEMBLY", 
-                  		"data" => "SPC ASSEMBY RUNNING" 
+                  		"data" => "TT" 
                		], 
                		[
                      		"type" => "uri", 
@@ -44,19 +44,11 @@ if(strtoupper($_msg) == "SCM")
         ]; 
 }
 
-if(ereg("^(SPC[[:space:]][A-Z][[:space:]][A-Z])$") strtoupper($_msg)) == true)
+if(strtoupper($_msg) == "TT")
 {
-	include("lib/nusoap.php");
-	$client = new nusoap_client("http://223.27.205.134:12000/Administration/nset_getdata.asmx?wsdl",true); 
-	$arrMsg = explode(" ", $_msg);
-	$params = array('processGrp' => (string)$arrMsg[1], 'status' => (string)$arrMsg[2]);
-	$data = $client->call('setSpecialCommand', $params);
-	$mydata = json_decode($data["setSpecialCommandResult"],true); 
-    
-    	$arrPostData = array();
-    	$arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
-    	$arrPostData['messages'][0]['type'] = "text";
-    	$arrPostData['messages'][0]['text'] = $mydata[0]['resultMsg'];
+	$arrPostData['messages'][1]['type'] = "sticker";
+    	$arrPostData['messages'][1]['packageId'] = "2";
+	$arrPostData['messages'][1]['stickerId'] = "172";
 }
 
 	  
